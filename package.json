@@ -1,0 +1,63 @@
+{
+  "name": "lebot",
+  "version": "0.0.0",
+  "description": "lebot",
+  "license": "MIT",
+  "repository": "https://github.com/taoyuan/lebot",
+  "author": "Yuan Tao <towyuan@outlook.com>",
+  "keywords": [
+    "letsencrypt",
+    "bot",
+    "lebot",
+    "cert",
+    "certification"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "format": "prettier --write \"{src,test}/**/*.ts\" --single-quote --trailing-comma es5",
+    "prepublishOnly": "npm run build",
+    "prebuild": "npm run clean && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty",
+    "test": "npm run build && nyc mocha --require ts-node/register --recursive \"test/**/*.test.ts\""
+  },
+  "dependencies": {
+    "acme": "^1.2.0",
+    "acme-v2": "^1.5.2",
+    "arrify": "^1.0.1",
+    "bluebird": "^3.5.3",
+    "fs-extra": "^7.0.1",
+    "greenlock": "^2.6.7",
+    "js-yaml": "^3.12.1",
+    "le-challenge-manual": "^2.1.0",
+    "le-challenge-standalone": "^2.1.0",
+    "le-store-certbot": "^2.2.1",
+    "lebot-challenge-ddns": "^1.0.4",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/arrify": "^1.0.4",
+    "@types/bluebird": "^3.5.25",
+    "@types/chai": "^4.1.7",
+    "@types/fs-extra": "^5.0.5",
+    "@types/js-yaml": "^3.12.0",
+    "@types/lodash": "^4.14.121",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.9.4",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.3.0",
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
+    "ts-node": "latest",
+    "typescript": "latest"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
