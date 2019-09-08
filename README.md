@@ -1,5 +1,7 @@
 # lebot
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/taoyuan/lebot.svg)](https://greenkeeper.io/)
+
 > Free SSL, Free Wildcard SSL, and Fully Automated HTTPS made dead simple<br>
   <small>certificates issued by Let's Encrypt v2 via [ACME](https://git.coolaj86.com/coolaj86/acme-v2.js)</small>
 
